@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from ultralytics import YOLO
 import os
 import random
@@ -37,7 +39,7 @@ for result in results:
         color = 'red' if class_id == 1 else 'green'
         rect = patches.Rectangle((x_offset, 5), rectangle_width, 10, linewidth=2, edgecolor=color, facecolor=color)
         ax.add_patch(rect)
-        ax.text(x_offset + rectangle_width/2, 10, label, color='white', fontsize=12, ha='center', va='center')
+        ax.text(x_offset + rectangle_width / 2, 10, label, color='white', fontsize=12, ha='center', va='center')
         x_offset += rectangle_width
 
     result.show()
